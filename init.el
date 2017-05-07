@@ -8,7 +8,7 @@
     ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(package-selected-packages
    (quote
-    (ag grizzl projectile web-mode ace-jump-mode color-theme-sanityinc-tomorrow))))
+    (magit ag grizzl projectile web-mode ace-jump-mode color-theme-sanityinc-tomorrow))))
 
 (require 'package)
 (add-to-list 'package-archives
@@ -61,6 +61,7 @@
 
 (global-set-key (kbd "M-p") 'ace-window)
 (global-set-key (kbd "C-x p") 'ag-project)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -68,3 +69,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
