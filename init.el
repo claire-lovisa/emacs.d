@@ -50,6 +50,8 @@
 
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+(global-set-key (kbd "M-p") 'ace-window)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
