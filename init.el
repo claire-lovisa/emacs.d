@@ -5,10 +5,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+    ("a2e7b508533d46b701ad3b055e7c708323fb110b6676a8be458a758dd8f24e27" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(package-selected-packages
    (quote
-    (magit ag grizzl projectile web-mode ace-jump-mode color-theme-sanityinc-tomorrow))))
+    (flatland-theme multiple-cursors less-css-mode magit ag grizzl projectile web-mode ace-jump-mode color-theme-sanityinc-tomorrow))))
 
 (require 'package)
 (add-to-list 'package-archives
@@ -24,12 +24,19 @@
   (package-refresh-contents))
 (package-install-selected-packages)
 
-(load-theme 'sanityinc-tomorrow-eighties)
+;(load-theme 'sanityinc-tomorrow-eighties)
+(load-theme 'flatland)
 (transient-mark-mode 1)
 (global-linum-mode t)
 
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#414141")
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (electric-pair-mode t)
-(push '(?\' . ?\') electric-pair-pairs) 
+(push '(?\' . ?\') electric-pair-pairs)
+(push '(?\| . ?\|) electric-pair-pairs)
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -45,6 +52,7 @@
 (setq web-mode-code-indent-offset 2)
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
@@ -69,4 +77,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
