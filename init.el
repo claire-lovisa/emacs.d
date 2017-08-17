@@ -8,7 +8,7 @@
     ("a2e7b508533d46b701ad3b055e7c708323fb110b6676a8be458a758dd8f24e27" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(package-selected-packages
    (quote
-    (flatland-theme multiple-cursors less-css-mode magit ag grizzl projectile web-mode ace-jump-mode color-theme-sanityinc-tomorrow))))
+    (ace-mc flymake-json flatland-theme multiple-cursors less-css-mode magit ag grizzl projectile web-mode ace-jump-mode color-theme-sanityinc-tomorrow))))
 
 (require 'package)
 (add-to-list 'package-archives
@@ -31,6 +31,8 @@
 
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#414141")
+
+(set-face-attribute 'region nil :background "#666")
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -71,9 +73,24 @@
 
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+(setq projectile-switch-project-action 'projectile-dired)
+
 (global-set-key (kbd "M-p") 'ace-window)
 (global-set-key (kbd "C-x p") 'ag-project)
+(global-set-key (kbd "C-x b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+(global-set-key (kbd "C-x ;") 'ace-mc-add-multiple-cursors)
+(global-set-key (kbd "C-x j") 'ace-mc-add-single-cursor)
+
+(global-set-key (kbd "C-c j v") 'flymake-json-load)
+
+;;(global-set-key (kbd "C-S->") 'mc/mark-next-like-this)
+;;(global-set-key (kbd "C-S-<") 'mc/mark-previous-like-this)
+;;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
