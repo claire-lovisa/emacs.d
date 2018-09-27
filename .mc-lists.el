@@ -3,7 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        beginning-of-buffer
         electric-pair-delete-pair
+        end-of-buffer
+        sgml-slash
+        xterm-paste
         ))
 
 (setq mc/cmds-to-run-once
@@ -13,4 +17,5 @@
         ace-mc-add-multiple-cursors
         ace-mc-add-single-cursor
         ace-mc-do-keyboard-reset
+        upcase-region
         ))
